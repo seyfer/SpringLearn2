@@ -5,6 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import seed.seyfer.spring.application.Printer;
+
 /**
  * Created by seyfer on 3/14/16.
  */
@@ -17,5 +19,7 @@ public class MainInt {
 
         Printer printer = context.getBean(Printer.class);
         printer.printMessage();
+        
+        context.close();
     }
 }

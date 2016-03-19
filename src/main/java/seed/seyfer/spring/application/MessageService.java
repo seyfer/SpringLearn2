@@ -1,7 +1,6 @@
-package seed.seyfer.spring.Impl;
+package seed.seyfer.spring.application;
 
 import org.springframework.stereotype.Component;
-import seed.seyfer.spring.IMessageService;
 
 /**
  * Created by seyfer on 3/14/16.

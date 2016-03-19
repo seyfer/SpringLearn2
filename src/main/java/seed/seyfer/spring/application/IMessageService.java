@@ -1,4 +1,4 @@
-package seed.seyfer.spring;
+package seed.seyfer.spring.application;
 
 /**
  * Created by seyfer on 3/14/16.

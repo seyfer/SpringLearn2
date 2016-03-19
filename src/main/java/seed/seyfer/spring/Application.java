@@ -79,7 +79,7 @@ public class Application implements CommandLineRunner {
         person.speak();
 
         //it will run tomcat with spring boot
-        SpringApplication.run(Application.class, args);
+//        SpringApplication.run(Application.class, args);
     }
 
     public void run(String... strings) throws Exception {
