@@ -31,7 +31,7 @@ public class DevelopersApp implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		// it will run tomcat with spring boot
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(LearnBeansApp.class, args);
 	}
 
 	public void run(String... strings) throws Exception {

@@ -1,12 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-destroy-method="onBeanDestroy" default-init-method="onBeanInit"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!-- A simple bean definition -->
-    <bean id="person" class="seed.seyfer.spring.application.Person">
-        <!-- collaborators and configuration for this bean go here -->
-    </bean>
+	<!-- A simple bean definition -->
+	<bean id="person" class="seed.seyfer.spring.application.Person"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="getInstance">
+		<constructor-arg value="777" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Merry" name="name" type="java.lang.String"></constructor-arg>
+
+		<!-- <property name="taxId" value="123"></property> -->
+		<property name="taxId">
+			<value>123</value>
+		</property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="person2" class="seed.seyfer.spring.application.Person"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="create" factory-bean="personfactory">
+		<constructor-arg value="777" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Merry" name="name" type="java.lang.String"></constructor-arg>
+
+		<!-- <property name="taxId" value="123"></property> -->
+		<property name="taxId">
+			<value>123</value>
+		</property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="personfactory" class="seed.seyfer.spring.application.PersonFactory"></bean>
+
+	<bean id="address" class="seed.seyfer.spring.application.Address">
+		<constructor-arg value="Sverdlov"></constructor-arg>
+		<constructor-arg value="667980"></constructor-arg>
+	</bean>
+
+	<bean id="address2" class="seed.seyfer.spring.application.Address"
+		p:street="street p" p:postcode="5534433">
+	</bean>
+
+	<bean id="basket" class="seed.seyfer.spring.application.FruitBasket">
+		<constructor-arg name="name" value="Mine"></constructor-arg>
+		<constructor-arg name="fruits">
+			<list>
+				<value>apple</value>
+				<value>banana</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="jungle" class="seed.seyfer.spring.application.Jungle">
+		<property name="largest" ref="elephant"></property>
+		<property name="animals">
+			<list>
+				<ref bean="lion"/>
+				<ref bean="snake"/>
+				<ref bean="elephant"/>
+			</list>
+		</property>
+		<property name="foods">
+			<props>
+				<prop key="gorilla">banana</prop>
+				<prop key="panda">bamboo</prop>
+				<prop key="snake">eggs</prop>
+			</props>
+		</property>
+		<property name="mappedAnimals">
+			<map>
+				<entry key="lion" value-ref="lion"></entry>
+				<entry key="elephant" value-ref="elephant"></entry>
+				<entry key="snake" value-ref="snake"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="lion" class="seed.seyfer.spring.application.Animal">
+		<property name="name" value="Igor" />
+		<property name="type" value="lion" />
+	</bean>
+	<bean id="elephant" class="seed.seyfer.spring.application.Animal">
+		<property name="name" value="Richard" />
+		<property name="type" value="elephant" />
+	</bean>
+	<bean id="snake" class="seed.seyfer.spring.application.Animal">
+		<property name="name" value="Bob" />
+		<property name="type" value="snake" />
+	</bean>
 </beans>

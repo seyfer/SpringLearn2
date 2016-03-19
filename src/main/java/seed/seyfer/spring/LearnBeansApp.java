@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import seed.seyfer.spring.application.Address;
+import seed.seyfer.spring.application.FruitBasket;
+import seed.seyfer.spring.application.Jungle;
 import seed.seyfer.spring.application.Person;
 
 /**
@@ -18,7 +21,7 @@ import seed.seyfer.spring.application.Person;
 @Configuration
 @ComponentScan("seed.seyfer.spring")
 @EnableAutoConfiguration
-public class Application {
+public class LearnBeansApp {
 
 	/**
 	 * debug
@@ -52,8 +55,20 @@ public class Application {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans/beans.xml");
 
 		Person personC = (Person) applicationContext.getBean("person");
+		Person personC2 = (Person) applicationContext.getBean("person");
 
+		Address address = (Address) applicationContext.getBean("address");
+
+		FruitBasket fruitBasket = (FruitBasket) applicationContext.getBean("basket");
+		
+		Jungle jungle = (Jungle) applicationContext.getBean("jungle");
+		
 		((ClassPathXmlApplicationContext) applicationContext).close();
+
+		System.out.println(personC);
+		System.out.println(address);
+		System.out.println(fruitBasket);
+		System.out.println(jungle);
 
 		personC.speak();
 
