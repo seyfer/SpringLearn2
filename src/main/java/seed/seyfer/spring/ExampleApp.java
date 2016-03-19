@@ -13,9 +13,9 @@ import seed.seyfer.spring.application.Printer;
 @Configuration
 @ComponentScan("seed.seyfer")
 @EnableAutoConfiguration
-public class MainInt {
+public class ExampleApp {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MainInt.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ExampleApp.class);
 
         Printer printer = context.getBean(Printer.class);
         printer.printMessage();
