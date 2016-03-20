@@ -1,4 +1,4 @@
-package seed.seyfer.spring.domain;
+package seed.seyfer.developers.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

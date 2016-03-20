@@ -1,4 +1,4 @@
-package seed.seyfer.spring.application;
+package seed.seyfer.example.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

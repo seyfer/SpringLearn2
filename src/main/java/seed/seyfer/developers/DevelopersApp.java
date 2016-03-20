@@ -1,4 +1,4 @@
-package seed.seyfer.spring;
+package seed.seyfer.developers;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -12,14 +12,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import seed.seyfer.spring.domain.Developer;
-import seed.seyfer.spring.domain.DeveloperRepository;
-import seed.seyfer.spring.domain.Skill;
-import seed.seyfer.spring.domain.SkillRepository;
+import seed.seyfer.developers.domain.Developer;
+import seed.seyfer.developers.domain.DeveloperRepository;
+import seed.seyfer.developers.domain.Skill;
+import seed.seyfer.developers.domain.SkillRepository;
+import seed.seyfer.learnbeans.LearnBeansApp;
 
 @SpringBootApplication
 @Configuration
-@ComponentScan("seed.seyfer.spring")
+@ComponentScan("seed.seyfer.developers")
 @EnableAutoConfiguration
 public class DevelopersApp implements CommandLineRunner {
 

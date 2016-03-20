@@ -1,4 +1,4 @@
-package seed.seyfer.spring.application;
+package seed.seyfer.learnbeans.application;
 
 public class PersonFactory {
 	public Person create(int id, String name) {

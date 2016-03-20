@@ -1,4 +1,4 @@
-package seed.seyfer.spring.application;
+package seed.seyfer.learnbeans.application;
 
 import java.util.List;
 

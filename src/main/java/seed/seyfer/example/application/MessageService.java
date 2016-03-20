@@ -1,4 +1,4 @@
-package seed.seyfer.spring.application;
+package seed.seyfer.example.application;
 
 import org.springframework.stereotype.Component;
 
