@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName"
+	default-autowire-candidates="consoleWriter,fileWriter">
+
+<!-- <bean id="logger" class="seed.seyfer.autowiring.application.Logger" -->
+<!-- autowire="byType"></bean> -->
+
+<!-- <bean id="consolewriter" class="seed.seyfer.autowiring.application.ConsoleWriter"></bean> -->
+<!-- <bean id="filewriter" class="seed.seyfer.autowiring.application.FileWriter"></bean> -->
+
+<bean id="loggerAmbigous" class="seed.seyfer.autowiring.application.LoggerAmbigous"
+autowire="constructor"></bean>
+<!-- autowire="byName"></bean> -->
+
+<bean id="consoleWriter" class="seed.seyfer.autowiring.application.ConsoleWriter" primary="true"></bean>
+<bean id="fileWriter" class="seed.seyfer.autowiring.application.FileWriter"></bean>
+
+<bean id="consoleWriter2" class="seed.seyfer.autowiring.application.ConsoleWriter"></bean>
+<bean id="fileWriter2" class="seed.seyfer.autowiring.application.FileWriter"
+autowire-candidate="false"></bean>
+
+</beans>

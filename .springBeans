@@ -7,9 +7,12 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/resources/learnautowiring/beans.xml</config>
+		<config>java:seed.seyfer.autowiring.AutowiringApp</config>
+		<config>java:seed.seyfer.beans.BeansApp</config>
 	</configs>
 	<autoconfigs>
+		<config>java:seed.seyfer.developers.DevelopersApp</config>
+		<config>java:seed.seyfer.example.ExampleApp</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

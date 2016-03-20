@@ -1,4 +1,4 @@
-package seed.seyfer.learnbeans.application;
+package seed.seyfer.beans.application;
 
 /**
  * Created by seyfer on 3/17/16.

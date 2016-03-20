@@ -1,4 +1,4 @@
-package seed.seyfer.learnbeans.application;
+package seed.seyfer.beans.application;
 
 public class Animal {
 	private String name;

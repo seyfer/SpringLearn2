@@ -1,4 +1,4 @@
-package seed.seyfer.learnbeans.application;
+package seed.seyfer.beans.application;
 
 import java.util.HashMap;
 import java.util.List;

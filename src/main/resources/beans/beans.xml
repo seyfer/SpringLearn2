@@ -7,7 +7,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<!-- A simple bean definition -->
-	<bean id="person" class="seed.seyfer.learnbeans.application.Person"
+	<bean id="person" class="seed.seyfer.beans.application.Person"
 		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
 		factory-method="getInstance">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
@@ -20,7 +20,7 @@
 		<property name="address" ref="address"></property>
 	</bean>
 
-	<bean id="person2" class="seed.seyfer.learnbeans.application.Person"
+	<bean id="person2" class="seed.seyfer.beans.application.Person"
 		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
 		factory-method="create" factory-bean="personfactory">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
@@ -33,18 +33,18 @@
 		<property name="address" ref="address"></property>
 	</bean>
 
-	<bean id="personfactory" class="seed.seyfer.learnbeans.application.PersonFactory"></bean>
+	<bean id="personfactory" class="seed.seyfer.beans.application.PersonFactory"></bean>
 
-	<bean id="address" class="seed.seyfer.learnbeans.application.Address">
+	<bean id="address" class="seed.seyfer.beans.application.Address">
 		<constructor-arg value="Sverdlov"></constructor-arg>
 		<constructor-arg value="667980"></constructor-arg>
 	</bean>
 
-	<bean id="address2" class="seed.seyfer.learnbeans.application.Address"
+	<bean id="address2" class="seed.seyfer.beans.application.Address"
 		p:street="street p" p:postcode="5534433">
 	</bean>
 
-	<bean id="basket" class="seed.seyfer.learnbeans.application.FruitBasket">
+	<bean id="basket" class="seed.seyfer.beans.application.FruitBasket">
 		<constructor-arg name="name" value="Mine"></constructor-arg>
 		<constructor-arg name="fruits">
 			<list>
@@ -54,7 +54,7 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="jungle" class="seed.seyfer.learnbeans.application.Jungle">
+	<bean id="jungle" class="seed.seyfer.beans.application.Jungle">
 		<property name="largest" ref="elephant"></property>
 		<property name="animals">
 			<list>
@@ -79,15 +79,15 @@
 		</property>
 	</bean>
 
-	<bean id="lion" class="seed.seyfer.learnbeans.application.Animal">
+	<bean id="lion" class="seed.seyfer.beans.application.Animal">
 		<property name="name" value="Igor" />
 		<property name="type" value="lion" />
 	</bean>
-	<bean id="elephant" class="seed.seyfer.learnbeans.application.Animal">
+	<bean id="elephant" class="seed.seyfer.beans.application.Animal">
 		<property name="name" value="Richard" />
 		<property name="type" value="elephant" />
 	</bean>
-	<bean id="snake" class="seed.seyfer.learnbeans.application.Animal">
+	<bean id="snake" class="seed.seyfer.beans.application.Animal">
 		<property name="name" value="Bob" />
 		<property name="type" value="snake" />
 	</bean>

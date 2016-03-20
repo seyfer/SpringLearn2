@@ -1,4 +1,4 @@
-package seed.seyfer.learnbeans;
+package seed.seyfer.beans;
 
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -10,18 +10,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import seed.seyfer.learnbeans.application.Address;
-import seed.seyfer.learnbeans.application.FruitBasket;
-import seed.seyfer.learnbeans.application.Jungle;
-import seed.seyfer.learnbeans.application.Person;
+import seed.seyfer.beans.application.Address;
+import seed.seyfer.beans.application.FruitBasket;
+import seed.seyfer.beans.application.Jungle;
+import seed.seyfer.beans.application.Person;
 
 /**
  * Created by seyfer on 3/14/16.
  */
 @Configuration
-@ComponentScan("seed.seyfer.learnbeans")
+@ComponentScan("seed.seyfer.beans")
 @EnableAutoConfiguration
-public class LearnBeansApp {
+public class BeansApp {
 
 	/**
 	 * debug
@@ -52,7 +52,7 @@ public class LearnBeansApp {
 
 	private static void classPathLoad() {
 		// load from resources
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("learnbeans/beans.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans/beans.xml");
 
 		Person personC = (Person) applicationContext.getBean("person");
 		Person personC2 = (Person) applicationContext.getBean("person");

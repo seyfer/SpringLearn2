@@ -12,11 +12,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import seed.seyfer.beans.BeansApp;
 import seed.seyfer.developers.domain.Developer;
 import seed.seyfer.developers.domain.DeveloperRepository;
 import seed.seyfer.developers.domain.Skill;
 import seed.seyfer.developers.domain.SkillRepository;
-import seed.seyfer.learnbeans.LearnBeansApp;
 
 @SpringBootApplication
 @Configuration
@@ -32,7 +32,7 @@ public class DevelopersApp implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		// it will run tomcat with spring boot
-		SpringApplication.run(LearnBeansApp.class, args);
+		SpringApplication.run(BeansApp.class, args);
 	}
 
 	public void run(String... strings) throws Exception {
