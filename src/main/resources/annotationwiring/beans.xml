@@ -15,6 +15,16 @@
 	</bean>
 
 	<bean id="filewriter" class="seed.seyfer.annotationwiring.application.FileWriter"></bean>
+	
+	<bean id="robot" class="seed.seyfer.annotationwiring.application.Robot">
+<!-- 	value="#{123+ 45}" -->
+		<property name="id" value="#{randomText.text?.length()}"></property>
+<!-- 		value="#{'prop' + 'hehe'}" -->
+<!-- value="#{randomText.getText()}" -->
+		<property name="speech" value="#{'said ' + randomText.text}"></property>
+	</bean>
+	
+	<bean id="randomText" class="seed.seyfer.annotationwiring.application.RandomText"></bean>
 
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="seed.seyfer.annotationwiring">
