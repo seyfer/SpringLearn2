@@ -7,8 +7,16 @@
 
 	<bean id="logger" class="seed.seyfer.annotationwiring.application.Logger"></bean>
 
-	<bean id="consolewriter" class="seed.seyfer.annotationwiring.application.ConsoleWriter"></bean>
+	<bean id="consolewriter" class="seed.seyfer.annotationwiring.application.ConsoleWriter">
+		<qualifier value="toconsole"></qualifier>
+	</bean>
+
+	<bean id="fake" class="seed.seyfer.annotationwiring.application.ConsoleWriter">
+	</bean>
+
 	<bean id="filewriter" class="seed.seyfer.annotationwiring.application.FileWriter"></bean>
 
 	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="seed.seyfer.annotationwiring">
+	</context:component-scan>
 </beans>

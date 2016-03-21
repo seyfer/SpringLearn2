@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import seed.seyfer.annotationwiring.application.Logger;
+import seed.seyfer.annotationwiring.application.Robot;
 
 
 @Configuration
@@ -23,10 +24,12 @@ public class AnnotationwiringApp {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotationwiring/beans.xml");
 
 		Logger logger = (Logger) applicationContext.getBean("logger");
+		Robot robot = (Robot)applicationContext.getBean("robot");
 
 		((ClassPathXmlApplicationContext) applicationContext).close();
 
 		logger.writeConsole("hi");
 		logger.writeFile("hello");
+		robot.speak();
 	}
 }
