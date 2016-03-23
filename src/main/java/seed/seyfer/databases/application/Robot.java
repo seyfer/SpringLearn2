@@ -18,7 +18,7 @@ public class Robot {
 	}
 
 	@Autowired
-	public void setId(@Value("${jdbc.user}") String id) {
+	public void setId(@Value("${jdbc.username}") String id) {
 		this.id = id;
 	}
 
