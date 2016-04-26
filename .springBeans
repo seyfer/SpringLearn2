@@ -9,10 +9,13 @@
 	<configs>
 		<config>java:seed.seyfer.autowiring.AutowiringApp</config>
 		<config>java:seed.seyfer.beans.BeansApp</config>
+		<config>src/main/resources/aop/beans.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>java:seed.seyfer.annotationwiring.AnnotationwiringApp</config>
 		<config>java:seed.seyfer.developers.DevelopersApp</config>
 		<config>java:seed.seyfer.example.ExampleApp</config>
+		<config>java:seed.seyfer.databases.DatabasesApp</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

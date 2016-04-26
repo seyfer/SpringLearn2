@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<!-- <bean id="camera" class="seed.seyfer.aop.Camera"></bean> -->
+	<!-- <bean id="logger" class="seed.seyfer.aop.Logger"></bean> -->
+
+	<!-- <aop:config> -->
+	<!-- <aop:pointcut expression="execution(void seed.seyfer.aop.Camera.snap())" -->
+	<!-- id="camerasnap" /> -->
+	<!-- <aop:aspect id="loggeraspect" ref="logger"> -->
+	<!-- <aop:before method="aboutToTakePhoto" pointcut-ref="camerasnap" /> -->
+	<!-- </aop:aspect> -->
+	<!-- </aop:config> -->
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="seed.seyfer.aop">
+	</context:component-scan>
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>
