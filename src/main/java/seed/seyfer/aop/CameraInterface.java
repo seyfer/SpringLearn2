@@ -14,4 +14,9 @@ public interface CameraInterface {
 	// adviced by
 	void snapNighttime();
 
+	void snap(double d);
+
+	void snap(int exposure, double d);
+	
+	void snapCar(Car car);
 }

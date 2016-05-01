@@ -35,9 +35,15 @@ public class AopApp {
 		System.out.println("\n");
 		camera.snap(1000);
 		System.out.println("\n");
+		camera.snap(1.8d);
+		System.out.println("\n");
+		camera.snap(1000, 1.8d);
+		System.out.println("\n");
 		camera.snap("name");
 		System.out.println("\n");
 		camera.snapNighttime();
+		System.out.println("\n");
+		camera.snapCar(new Car());
 		System.out.println("\n");
 		
 		lens.zoom(5);

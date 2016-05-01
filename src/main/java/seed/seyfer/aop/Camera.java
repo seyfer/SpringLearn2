@@ -4,13 +4,15 @@ import org.springframework.stereotype.Component;
 
 @Component("camera")
 public class Camera implements PhotoShooter, CameraInterface {
-	
+
 	public Camera() {
 		System.out.println("camera construct");
 	}
-	
+
 	// adviced by
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see seed.seyfer.aop.CameraInterface#snap()
 	 */
 	public void snap() {
@@ -18,7 +20,9 @@ public class Camera implements PhotoShooter, CameraInterface {
 	}
 
 	// adviced by
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see seed.seyfer.aop.CameraInterface#snap(int)
 	 */
 	public void snap(int exposure) {
@@ -26,7 +30,29 @@ public class Camera implements PhotoShooter, CameraInterface {
 	}
 
 	// adviced by
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see seed.seyfer.aop.CameraInterface#snap(int)
+	 */
+	public void snap(double some) {
+		System.out.println("Snap! " + some);
+	}
+
+	// adviced by
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see seed.seyfer.aop.CameraInterface#snap(int)
+	 */
+	public void snap(int exposure, double some) {
+		System.out.println("Snap! " + exposure + " " + some);
+	}
+
+	// adviced by
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see seed.seyfer.aop.CameraInterface#snap(java.lang.String)
 	 */
 	public String snap(String name) {
@@ -36,10 +62,17 @@ public class Camera implements PhotoShooter, CameraInterface {
 	}
 
 	// adviced by
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see seed.seyfer.aop.CameraInterface#snapNighttime()
 	 */
 	public void snapNighttime() {
 		System.out.println("Snap! night mode");
+	}
+
+	public void snapCar(Car car) {
+		// TODO Auto-generated method stub
+		System.out.println("Car snap! " + car);
 	}
 }

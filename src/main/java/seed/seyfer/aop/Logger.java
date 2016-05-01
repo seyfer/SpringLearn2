@@ -1,5 +1,7 @@
 package seed.seyfer.aop;
 
+import org.apache.bcel.classfile.Deprecated;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -23,7 +25,8 @@ public class Logger {
 	// for deprecated
 	// @Pointcut("@Deprecated within(seed.seyfer.aop.Camera)")
 	// for spring component
-	// @Pointcut("@org.springframework.sterotype.Component within(seed.seyfer.aop.Camera)")
+	// @Pointcut("@org.springframework.sterotype.Component
+	// within(seed.seyfer.aop.Camera)")
 	// for annotation global
 	// @Pointcut("@target(@org.springframework.sterotype.Component")
 	// @Pointcut("@annotation(@java.lang.Deprecated")
@@ -47,6 +50,45 @@ public class Logger {
 
 	@Pointcut("execution(String seed.seyfer.aop.Camera.snap(String))")
 	public void cameraSnapName() {
+	}
+
+	// @Pointcut("args(int)")
+	// @Pointcut("args(seed.seyfer.aop.Car)")
+	// @Pointcut("args(Object)")
+	@Pointcut("args(int, *)")
+	public void cameraSnapArgs() {
+	}
+	
+	@Pointcut("args(exposure, some)")
+	public void cameraSnapArgsNamed(int exposure, double some) {
+	}
+
+	@Before("cameraSnapArgs()")
+	public void aboutArgs(JoinPoint jp) {
+		System.out.println(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+
+		for (Object obj : jp.getArgs()) {
+			System.out.println(obj);
+		}
+	}
+	
+	//could be combined
+	//@Before("cameraSnapArgs() && cameraSnapArgsNamed(exposure, some)")
+	@Before("cameraSnapArgsNamed(exposure, some)")
+	public void aboutArgsNamed(JoinPoint jp, int exposure, double some) {
+		System.out.println(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+
+		System.out.printf("%d , %.2f \n", exposure, some);
+	}
+	
+	@After("cameraSnapArgsNamed(exposure, some) && !@annotation(Deprecated)")
+	public void aboutArgsNamedNotDeprecated(JoinPoint jp, int exposure, double some) {
+		System.out.println(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+
+		System.out.printf("%d , %.2f \n", exposure, some);
 	}
 
 	// advice
