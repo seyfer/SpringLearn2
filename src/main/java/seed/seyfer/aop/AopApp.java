@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import seed.seyfer.annotationwiring.application.Logger;
 import seed.seyfer.annotationwiring.application.Robot;
 
-
 @Configuration
 @ComponentScan("seed.seyfer.aop")
 @EnableAutoConfiguration
@@ -23,10 +22,25 @@ public class AopApp {
 		// load from resources
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("aop/beans.xml");
 
-        Camera camera = (Camera) applicationContext.getBean("camera");
+		Object obj = applicationContext.getBean("camera");
+		System.out.println("Camera bean class " + obj.getClass());
+		System.out.println(obj instanceof Camera);
 		
+		CameraInterface camera = (CameraInterface) applicationContext.getBean("camera");
+		Lens lens = (Lens) applicationContext.getBean("lens");
+
 		((ClassPathXmlApplicationContext) applicationContext).close();
-		
+
 		camera.snap();
+		System.out.println("\n");
+		camera.snap(1000);
+		System.out.println("\n");
+		camera.snap("name");
+		System.out.println("\n");
+		camera.snapNighttime();
+		System.out.println("\n");
+		
+		lens.zoom(5);
+		System.out.println("\n");
 	}
 }

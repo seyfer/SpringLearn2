@@ -22,5 +22,5 @@
 	<context:component-scan base-package="seed.seyfer.aop">
 	</context:component-scan>
 
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 </beans>
